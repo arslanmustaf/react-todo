@@ -61,6 +61,14 @@ import './App.css';
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
+  const [dark, setDark] = useState('light');
+  const toggleClass = () => {
+    if (dark === 'light') {
+      setDark('dark');
+    } else {
+      setDark('light');
+    }
+  };
   // Load tasks from local storage on initial render
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
@@ -74,7 +82,7 @@ const App = () => {
 
   const handleAddTask = () => {
     if (newTask.trim() !== '') {
-      setTasks([...tasks, newTask]);
+      setTasks([...tasks, newTask.toUpperCase()]);
       setNewTask('');
     }
   };
@@ -86,8 +94,10 @@ console.log(tasks)
   };
 
   return (
-    <div >
+   <div className={dark}>
+     <div className='todo-list' >
       <h1>Todo List</h1>
+      <button className='darkbtn' onClick={toggleClass}>dark mode</button>
       <div className="task-input">
         <input
           type="text"
@@ -107,6 +117,7 @@ console.log(tasks)
         ))}
       </ul> */}
     </div>
+   </div>
   );
 };
 

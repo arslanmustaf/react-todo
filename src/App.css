@@ -1,20 +1,35 @@
 
 
-
-body {
+*{
   margin: 0;
   padding: 0;
   font-family: 'Poppins','Roboto', 'Segoe UI', 'Oxygen';
   box-sizing: border-box;
+}
+.light , .dark{
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  background-color: #fff;
-  color: var(--text);
+  padding: 20px 0 0 0;
+}
+.light{
+  background-color: #b8ddf7;
+  color: rgb(47, 9, 138);
+}
+.dark{
+  background-color:rgb(28, 2, 90) ;
+  color: #fff;
 }
 a,li{
   text-decoration: none;
   list-style: none;
+}
+.todo-list {
+  padding: 4px 25px;
+  border: 2px solid;
+  border-radius: 36px;
 }
 button{
   padding:10px;
@@ -27,6 +42,11 @@ button{
   position: relative;
   left: 10px;
 }
+.darkbtn{
+  margin: 10px auto;
+  border-radius: 15px;
+
+}
 input{
   border: 2px solid rgb(86, 33, 230);;
   border-radius: 15px;
@@ -35,11 +55,24 @@ input{
   margin: auto;
   outline: none;
 }
-li{
+.task-list li{
   font-size: 18px;
   display: flex;
-  flex-flow: column;
-  padding: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  border: 2px solid;
+  border-radius: 25px;
+  margin: 10px auto;
+}
+.taskdiv{
+  font-weight: bold;
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.deletebtn{
+  width: 30%;
 }
 
 
