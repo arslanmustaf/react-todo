@@ -61,8 +61,6 @@ import './App.css';
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
-  const [darkMode, setDarkMode] = useState(false);
-
   // Load tasks from local storage on initial render
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
@@ -88,7 +86,7 @@ console.log(tasks)
   };
 
   return (
-    <div className={`App ${darkMode ? 'dark' : ''}`}>
+    <div >
       <h1>Todo List</h1>
       <div className="task-input">
         <input
