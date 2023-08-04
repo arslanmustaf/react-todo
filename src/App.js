@@ -55,6 +55,7 @@
 
 
 import React, { useState, useEffect } from 'react';
+import {Task} from './Task';
 import './App.css';
 
 const App = () => {
@@ -86,10 +87,6 @@ console.log(tasks)
     setTasks(updatedTasks);
   };
 
-  const handleToggleDarkMode = () => {
-    setDarkMode((prevDarkMode) => !prevDarkMode);
-  };
-
   return (
     <div className={`App ${darkMode ? 'dark' : ''}`}>
       <h1>Todo List</h1>
@@ -102,22 +99,15 @@ console.log(tasks)
         />
         <button onClick={handleAddTask}>Add</button>
       </div>
-      <ul className="task-list">
+      <Task tasks={tasks} handleDeleteTask={handleDeleteTask} />
+      {/* <ul className="task-list">
         {tasks.map((task, index) => (
           <li key={index}>
             {task}
             <button onClick={() => handleDeleteTask(index)}>Delete</button>
           </li>
         ))}
-      </ul>
-      <div className="dark-mode-toggle">
-        <label>Dark Mode</label>
-        <input
-          type="checkbox"
-          checked={darkMode}
-          onChange={handleToggleDarkMode}
-        />
-      </div>
+      </ul> */}
     </div>
   );
 };
